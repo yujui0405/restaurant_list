@@ -1,0 +1,16 @@
+{
+  "name": "restaurant_list",
+  "version": "1.0.0",
+  "description": "呈現餐廳清單，能夠搜尋餐廳，查看餐廳資料",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0"
+  }
+}
