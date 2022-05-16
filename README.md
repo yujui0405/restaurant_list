@@ -14,8 +14,10 @@
 + nodemon 2.0.16
 + Express 4.16.4
 + Express-handlebars 3.0.0
-+ Bootstrap v5.1
++ Bootstrap v4.6
 + popper.js 2.9.1
++ jquery 3.3.1
++ fontawesome 5.8.1
 
 ## 安裝與執行步驟 (installation and execution)
 
