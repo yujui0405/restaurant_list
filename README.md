@@ -1,5 +1,6 @@
 # 打造餐廳清單
 呈現餐廳清單，能夠搜尋餐廳，查看餐廳資料
+![displayPic](https://github.com/yujui0405/restaurant_list/blob/main/image/displayPic.PNG)
 
 ## 功能描述 (features)
 + 使用者可以在首頁看到所有餐廳與它們的簡單資料
