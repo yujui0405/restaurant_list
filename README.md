@@ -21,4 +21,22 @@
 + fontawesome 5.8.1
 
 ## 安裝與執行步驟 (installation and execution)
+1.使用終端機cd到預存放的資料夾位置
+```
+git clone https://github.com/yujui0405/restaurant_list.git
+```
+2.切換至下載好的資料夾 restaurant_list
+```
+cd restaurant_list
+```
+3.安裝並執行
+```
+npm install 
+npm run dev
+```
+4.開啟網頁瀏覽
+```
+看到終端機呈現 `Express is listening on localhost:3000`
+打開網頁 網址輸入 http://localhost:3000/ 即可看到畫面
+```
 
