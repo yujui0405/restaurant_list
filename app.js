@@ -1,10 +1,17 @@
 const express = require('express')
-const app = express()
+const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
-const port = 3000
 
+const app = express()
+const port = 3000
 //從json檔載入資料
 const restaurantList = require('./restaurant.json')
+
+// 設定連線到 mongoDB
+mongoose.connect(process.env.RESTAURANT_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connection
+db.on('error', () => console.log('mongodb error!'))
+db.once('open', () => console.log('mongodb connection!'))
 
 //加入樣板引擎
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
