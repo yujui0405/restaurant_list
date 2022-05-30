@@ -15,6 +15,7 @@
 + nodemon 2.0.16
 + Express 4.16.4
 + Express-handlebars 3.0.0
++ mongoose 5.9.7
 + Bootstrap v4.6
 + popper.js 2.9.1
 + jquery 3.3.1
