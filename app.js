@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const RestaurantModel = require('./models/restaurant.js')
 const exphbs = require('express-handlebars')
 
 const app = express()
@@ -17,16 +18,36 @@ db.once('open', () => console.log('mongodb connection!'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-//set static file
+//set static file & body-parser
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: restaurantList.results })
+  RestaurantModel.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.error(error))
 })
 
 //新增餐廳頁面
 app.get('/restaurants/new', (req, res) => {
   res.render('add')
+})
+
+//未完成!!
+app.post('/restaurants', (req, res) => {
+  const newRestaurant = req.body
+  let test = []
+  RestaurantModel.find()
+    .lean()
+    .then(restaurant => {
+      test = test.concat(restaurant)
+    })
+    .then(() => {
+      console.log(test)
+      console.log('資料長度:', test.length)
+    })
+
 })
 
 //顯示選中的restaurant詳細資料
