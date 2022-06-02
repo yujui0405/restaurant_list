@@ -1,0 +1,122 @@
+<!--  ./views/index.handlebars -->
+<div class="container py-5">
+
+  <div class="row">
+    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">新增餐廳清單 <i class="fas fa-utensils"></i></h5>
+          <hr>
+          <form method="POST" action="#" id="form" novalidate>
+
+            <div class="row g-2 mb-3">
+              <label for="name" class="col-md-3 col-form-label">
+                餐廳名稱(中文):
+              </label>
+              <div class="col-md-9">
+                <input type="text" name="name" class="form-control" id="name" required>
+                <div class="invalid-feedback">
+                  必須填入餐廳名稱
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <label for="name_en" class="col-md-3 col-form-label">
+                餐廳名稱(英文):
+              </label>
+              <div class="col-md-9">
+                <input type="text" name="name_en" class="form-control" id="name_en">
+              </div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <label for="category" class="col-md-3 col-form-label">
+                餐廳種類:
+              </label>
+              <div class="col-md-9">
+                <input list="categories" name="category" class="form-control" id="category" placeholder="中東料理、日本料理...">
+                
+                <datalist id="categories">
+                  <option>中東料理</option>
+                  <option>日本料理</option>
+                  <option>義式餐廳</option>
+                  <option>美式</option>
+                  <option>酒吧</option>
+                  <option>咖啡</option>
+                </datalist>
+              </div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <label for="image" class="col-md-3 col-form-label">
+                餐廳圖片:
+              </label>
+              <div class="col-md-9">
+                <input type="text" name="image" class="form-control" id="image" placeholder="https://">
+              </div>
+            </div>
+            
+            <div class="row g-2 mb-3">
+              <label for="location" class="col-md-3 col-form-label">
+                地址:
+              </label>
+              <div class="col-md-9">
+                <input type="text" name="location" class="form-control" id="location">
+              </div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <label for="phone" class="col-md-3 col-form-label">
+                電話:
+              </label>
+              <div class="col-md-9">
+                <input type="text" name="phone" class="form-control" id="phone">
+              </div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <label for="google_map" class="col-md-3 col-form-label">
+                Google Map:
+              </label>
+              <div class="col-md-9">
+                <input type="text" name="google_map" class="form-control" id="google_map" placeholder="https://">
+              </div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <label for="rating" class="col-md-3 col-form-label">
+                 評分:
+              </label>
+              <div class="col-md-9">
+                <input type="number" name="rating" class="form-control" id="rating" min="0" max="5" step="0.1" placeholder="0~5分">
+              </div>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <label for="description" class="col-md-3 col-form-label">
+                餐廳描述:
+              </label>
+              <div class="col-md-9">
+                <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+              </div>
+            </div>
+            
+            <button class="btn btn-success" type="submit">Generate Password</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const form = document.querySelector('#form')
+  form.addEventListener('submit', function onFormSubmitted(event){
+    if(!form.checkValidity()){
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    form.classList.add('was-validated')
+  })
+</script>

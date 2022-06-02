@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
   res.render('index', { restaurants: restaurantList.results })
 })
 
+//新增餐廳頁面
+app.get('/restaurants/new', (req, res) => {
+  res.render('add')
+})
+
 //顯示選中的restaurant詳細資料
 app.get('/restaurants/:restaurant_id', (req, res) => {
   const restaurant = restaurantList.results.find(restaurant => req.params.restaurant_id === restaurant.id.toString())
